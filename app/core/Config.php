@@ -10,10 +10,6 @@ define('DB_PASS', "");
 define('DB_TYPE', "mysql");
 define('DB_HOST', "localhost");
 
-
-define('THEME', 'bestshoes');
-
-
 //define debug mode
 define('DEBUG', true);
 
