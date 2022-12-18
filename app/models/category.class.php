@@ -75,7 +75,9 @@ class Category
     $query = "select * from category";
     $category_recup = $db->prepare($query);
     $category_recup->execute();
-    $category_list = $category_recup->fetchAll(PDO::FETCH_ASSOC);
+      $category_recup->fetchAll(PDO::FETCH_ASSOC);
+
+    return $category_list;
 
 // END : trier par ordre croissant ou décroissant
         }

@@ -23,25 +23,12 @@
 </div>
 
 
-<?php foreach($category_list as $category){
-
-?>
-
-<div>
-  <?=$category['category'] ?>
-
-
-</div>
-
-<?php
-
-
-}
-
-
-
-?>
-
+<?php while($row = $category_list) : ?>
+     <tr>
+       <td><?php echo htmlspecialchars($row['id']); ?></td>
+       <td><?php echo htmlspecialchars($row['name']); ?></td>
+     </tr>
+     <?php endwhile; ?>
 
 
 

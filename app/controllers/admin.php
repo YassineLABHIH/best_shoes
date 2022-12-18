@@ -30,6 +30,7 @@ class Admin extends Controller
         { 
             $category = $this->load_model("Category");
             $category->create($_POST);
+            
         }
 
         $this->view("admin/category",$data);
