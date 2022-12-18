@@ -11,7 +11,7 @@ define('DB_TYPE', "mysql");
 define('DB_HOST', "localhost");
 
 
-define('THEME', 'template_ecommerce/');
+define('THEME', 'ecommerce/');
 define('NODE', 'node_modules/');
 
 
