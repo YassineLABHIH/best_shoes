@@ -1,0 +1,34 @@
+{
+  "name": "best_shoes",
+  "version": "1.0.0",
+  "description": "best shoes e-commerce site",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YassineLABHIH/best_shoes.git"
+  },
+  "author": "LABHIH Yassine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YassineLABHIH/best_shoes/issues"
+  },
+  "homepage": "https://github.com/YassineLABHIH/best_shoes#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "boxicons": "^2.1.4",
+    "font-awesome": "^4.7.0",
+    "ion-rangeslider": "^2.3.1",
+    "linearicons": "^1.0.2",
+    "magnific-popup": "^1.1.0",
+    "nouislider": "^15.6.1",
+    "owl.carousel": "^2.3.4",
+    "quill": "^1.3.7",
+    "remixicon": "^2.5.0",
+    "simple-datatables": "^4.0.8",
+    "themify-icons": "^1.0.0"
+  }
+}
