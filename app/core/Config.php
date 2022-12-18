@@ -18,9 +18,8 @@ define('NODE', 'node_modules/');
 //define debug mode
 define('DEBUG', true);
 
-if(DEBUG){
+if (DEBUG) {
     ini_set('display_errors', 1);
-}else{
+} else {
     ini_set('display_errors', 0);
 }
-

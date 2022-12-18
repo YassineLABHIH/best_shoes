@@ -3,96 +3,115 @@
 class Category
 {
 
-        private $error = "";
-        private $message = "";
-        
-        
-        
-        public function create($POST)
-        {
+  private $error = "";
+  private $message = "";
 
-          $data = array();
-        	$data['category'] = trim($POST['category']);
+  private $id;
+  private $category;
 
-      
-            $db = Database::getInstance();
+  /**
+   * Get the value of id
+   */ 
+  public function getId()
+  {
+    return $this->id;
+  }
 
-         //check all fields are filled in
-         if (empty($data['category'])) 
-         {
-             $this->error .= "Please complete all fields !<br>";
-         }
+  /**
+   * Set the value of id
+   *
+   * @return  self
+   */ 
+  public function setId($id)
+  {
+    $this->id = $id;
 
-         //check only contain letters
-         preg_match("/([^A-Za-z\s])/",$data['category'],$content);
-         if(!empty($content)){
-          $this->error .= "The category can only contain letters !<br>";
-        }
-    
-        //check if category already exists
-          $sql = "select * from categories where category = :category limit 1";
-          $arr['category'] = $data['category'];
-          $check = $db->read($sql,$arr);
-          
-    
-          if(!empty($check))
-          {
-            $this->error .= "This category already exists !";
-           
-          }
-    
-          //register in the database
-          if($this->error == "")
-          {
-             
-            $query = "insert into categories (category) values (:category)";
-            $result = $db->write($query,$data);
-    
-            if($result)
-            {
-              
-              $this->message .= "The category has been successfully added";
-              $_SESSION['message'] = $this->message;
-              header("Location:".ROOT."admin/category");
-              die;
-            }
-              
-          }
-    
-          $_SESSION['error'] = $this->error;
-          
-      
-      
-        }
+  }
 
-        public function affich(){
-          $category_list = array();
-          $db = Database::getInstance();
+   /**
+   * Get the value of category
+   */ 
+  public function getCategory()
+  {
+    return $this->category;
+  }
 
-    // START : trier par ordre croissant ou décroissant
+  /**
+   * Set the value of category
+   *
+   * @return  self
+   */ 
+  public function setCategory($category)
+  {
+    $this->category = $category;
+
+  }
+
+  /**
+     * Database class
+     * @return void
+     */
+    public function create($POST) :void
+  {
+
+    $data = array();
+    $data['category'] = trim($POST['category']);
 
 
-    $query = "select * from category";
-    $category_recup = $db->prepare($query);
-    $category_recup->execute();
-      $category_recup->fetchAll(PDO::FETCH_ASSOC);
+    $db = Database::getInstance();
 
-    return $category_list;
-
-// END : trier par ordre croissant ou décroissant
-        }
-    
-          
-
-
-    public function edit()
-    {
-        
+    //check all fields are filled in
+    if (empty($data['category'])) {
+      $this->error .= "Please complete all fields !<br>";
     }
 
-
-    public function delete()
-    {
-        
+    //check only contain letters
+    preg_match("/([^A-Za-z\s])/", $data['category'], $content);
+    if (!empty($content)) {
+      $this->error .= "The category can only contain letters !<br>";
     }
+
+    //check if category already exists
+    $sql = "select * from categories where category = :category limit 1";
+    $arr['category'] = $data['category'];
+    $check = $db->read($sql, $arr);
+
+
+    if (!empty($check)) {
+      $this->error .= "This category already exists !";
+    }
+
+    //register in the database
+    if ($this->error == "") {
+
+      $query = "insert into categories (category) values (:category)";
+      $result = $db->write($query, $data);
+
+      if ($result) {
+
+        $this->message .= "The category has been successfully added";
+        $_SESSION['message'] = $this->message;
+        header("Location:" . ROOT . "admin/category");
+        die;
+      }
+    }
+
+    $_SESSION['error'] = $this->error;
+  }
+
+
+
+
+  public function edit()
+  {
+  }
+
+
+  public function delete()
+  {
+  }
+
+  
+
+ 
 }

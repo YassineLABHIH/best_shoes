@@ -22,14 +22,4 @@
 </form>
 </div>
 
-
-<?php while($row = $category_list) : ?>
-     <tr>
-       <td><?php echo htmlspecialchars($row['id']); ?></td>
-       <td><?php echo htmlspecialchars($row['name']); ?></td>
-     </tr>
-     <?php endwhile; ?>
-
-
-
 <?php $this->view("admin/footer", $data); ?>

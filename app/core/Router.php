@@ -6,6 +6,11 @@ class Router
     protected $method = "index";
     protected $params;
 
+      /**
+     * registers executable routes
+     * @param string $params
+     * @return void
+     */
     public function __construct()
     {
         $url = $this->parseURL();
@@ -35,6 +40,10 @@ class Router
         call_user_func_array([$this->controller,$this->method], $this->params);
     }
 
+      /**
+     * Parses a URL and returns its components
+     *
+     */
     private function parseURL()
     {
         $url = isset($_GET['url']) ? $_GET['url'] : "home";

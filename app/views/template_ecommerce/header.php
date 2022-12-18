@@ -31,6 +31,24 @@
 	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/ion.rangeSlider.skinFlat.css" />
 	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/magnific-popup.css">
 	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/main.css">
+
+
+	<!-- CSS Node 
+	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/linearicons.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>linearicons/dist/web-font/style.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>themify-icons/themify-icons/_themify-icons.scss">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>bootstrap-icons/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>owl.carousel\dist\assets\owl.carousel.css">
+	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/nice-select.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>nouislider\dist\nouislider.min.css">
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>ion-rangeslider\css\ion.rangeSlider.css" />
+	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="<?= ASSETS . NODE ?>magnific-popup\dist\magnific-popup.css">
+	<link rel="stylesheet" href="<?= ASSETS . THEME ?>css/main.css">
+	-->
+
 </head>
 
 <body>
@@ -41,7 +59,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index"><img src="<?= ASSETS . THEME ?>img/logo.png" alt=""> |</a>
+					<a class="navbar-brand logo_h" href="index"><img src="<?= ASSETS . THEME ?>img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -50,39 +68,22 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav">
-							<?php if (isset($_SESSION['user_url'])) : ?>
-								<li class="nav-item"><i class="lnr lnr-user"></i><a href="#" class="nav-link"><span class="text-uppercase font-weight-bold h6"><?= $_SESSION['name'] ?></span></a></li>
-							<?php endif ?>
+							
 					</div>
 
 					<ul class="nav navbar-nav menu_nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="index">Home</a></li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="category">Shop Category</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-product">Product Details</a></li>
-								<li class="nav-item"><a class="nav-link" href="checkout">Product Checkout</a></li>
-								<li class="nav-item"><a class="nav-link" href="cart">Shopping Cart</a></li>
-								<li class="nav-item"><a class="nav-link" href="confirmation">Confirmation</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="blog">Blog</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-blog">Blog Details</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
-								<li class="nav-item"><a class="nav-link" href="tracking">Tracking</a></li>
-								<li class="nav-item"><a class="nav-link" href="elements">Elements</a></li>
-							</ul>
-						</li>
+					
+						<li class="nav-item"><a class="nav-link" href="shop">Shop</a></li>
+
+
+						<li class="nav-item"><a class="nav-link" href="blog">Blog</a></li>
+
+
+
 						<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+					
+						
 						<?php if (isset($_SESSION['user_url'])) : ?>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="lnr lnr-user"></span><span class="ml-1"><?= $_SESSION['name'] ?></span></a>
@@ -94,7 +95,7 @@
 									<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 								</ul>
 							</li> <?php else : ?>
-							<li class="nav-item active"><a class="nav-link" href="login"><span class="lnr lnr-user"></span><span class="ml-1">Login</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="login"><span class="lnr lnr-user"></span><span class="ml-1">Login</span></a></li>
 						<?php endif; ?>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

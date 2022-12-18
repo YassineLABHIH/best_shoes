@@ -1,9 +1,13 @@
 <?php
 class Home extends Controller
 {
-    public function index()
+    /**
+     * show home page
+     * @return void
+     */
+    public function index(): void
     {
-        
+
         $User = $this->load_model('User');
 
         // a virer ?
@@ -12,9 +16,8 @@ class Home extends Controller
         if (is_array($user_data)) {
             $data['user_data'] = $user_data;
         }
-        
-        $data['page_title'] = "Home";
-        $this->view("index",$data);
-    }
 
+        $data['page_title'] = "Home";
+        $this->view("index", $data);
+    }
 }

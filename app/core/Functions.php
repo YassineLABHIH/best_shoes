@@ -1,13 +1,5 @@
 <?php
 
-function show($data)
-{
-
-    echo "<pre>";
-    print_r($data);
-    echo "<pre>";
-}
-
 //check error and display
 function check_error()
 {
@@ -18,7 +10,7 @@ function check_error()
     }
 } 
 
-//check signup message and display
+//check message and display
 function check_message()
 {
     if (isset($_SESSION['message'])) 
