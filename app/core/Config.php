@@ -11,15 +11,16 @@ define('DB_TYPE', "mysql");
 define('DB_HOST', "localhost");
 
 
-define('THEME', 'ecommerce/');
+define('THEME', 'template_ecommerce/');
 define('NODE', 'node_modules/');
 
 
 //define debug mode
 define('DEBUG', true);
 
-if (DEBUG) {
+if(DEBUG){
     ini_set('display_errors', 1);
-} else {
+}else{
     ini_set('display_errors', 0);
 }
+
