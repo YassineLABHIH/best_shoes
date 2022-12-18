@@ -19,11 +19,11 @@ function check_error()
 } 
 
 //check signup message and display
-function check_signup_message()
+function check_message()
 {
-    if (isset($_SESSION['signup_message'])) 
+    if (isset($_SESSION['message'])) 
     {
-        echo $_SESSION['signup_message'];
-        unset ($_SESSION['signup_message']);
+        echo $_SESSION['message'];
+        unset ($_SESSION['message']);
     }
 } 
